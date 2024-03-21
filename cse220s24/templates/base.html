@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Beautiful Site</title>
+
+    <style>
+        /* Add a black background color to the top navigation */
+        .topnav {
+            background-color: darksalmon;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 47px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: blue;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: darkslategray;
+            color: white;
+        }
+
+        footer {
+            background-color: cornsilk;
+        }
+
+    </style>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/A">App 1</a>
+    <a href="/B">App 2</a>
+    <a href="/C">App 3</a>
+</div>
+
+{% block content %}
+    <h2>Build software for yourself</h2>
+    <p>
+        A great way to build software is to start out by solving your own problems.
+    You’ll be the target audience and you’ll know what’s important and what’s not.
+    That gives you a great head start on delivering a breakout product.
+    </p>
+{% endblock %}
+
+<footer>
+    <blockquote>
+        This is a site under construction. Use it at your own risk!
+    </blockquote>
+</footer>
+
+</body>
+</html>

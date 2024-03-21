@@ -1,0 +1,7 @@
+services:
+ server:
+  build:
+   context: .
+  ports:
+   - 9500:9500
+

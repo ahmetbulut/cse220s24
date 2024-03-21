@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    What is the meaning of life?
+    {{ message }}
+    <ul>
+    {% for x in list_x %}
+        <li><b>{{ x }}</b></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>
+    <form method="get" action="search">
+        <label> Name (contains filter):
+            <input type="name" name="name_filter">
+        </label>
+        <button>Search</button>
+    </form>
+
+    {% if customers %}
+        <h4> Here are the customers matching your criteria: </h4>
+        <ul>
+            {% for customer in customers %}
+                <li> {{ customer }} </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No customers match your criteria. </p>
+    {% endif %}
+
+{% endblock %}
