@@ -1,7 +1,8 @@
 from django.urls import path
-from secondapp.views import example, get_customers
+from secondapp.views import create_movie, get_customers, rate_view
 
 urlpatterns = [
-    path('example', example),
-    path('search', get_customers)
+    path('create_movie', create_movie),
+    path('search', get_customers),
+    path('rate', rate_view),
 ]

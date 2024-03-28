@@ -1,13 +1,25 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from secondapp.models import Customer
+from secondapp.models import Customer, Movie, Rating
+from secondapp.forms import MovieForm, RatingForm
+
 
 # Create your views here.
-def example(request):
-    #return HttpResponse("This is a fine day.")
-    return render(request, 'example.html',
-                  context={'message': 'keep it cool!',
-                           'list_x': ['Harry Potter', 'Sicario', 'The Revenant', 'Zootropolis']})
+def create_movie(request):
+    if request.method == 'POST':
+        form = MovieForm(request.POST)
+        if form.is_valid():
+            movie = Movie()
+            movie.name = form.cleaned_data['name']
+            movie.description = form.cleaned_data['description']
+            movie.release_date = form.cleaned_data['release_date']
+            movie.save()
+            return render(request, 'confirmation.html',
+                          context = {'descriptive_info': str(movie)})
+    else: # request.method is a GET (the first time get)
+        form = MovieForm()
+
+    return render(request, 'create_movie.html', context = {'form': form})
 
 def get_customers(request):
     if request.GET:
@@ -19,3 +31,20 @@ def get_customers(request):
                   )
     else:
         return render(request,"search.html")
+
+
+def rate_view(request):
+    if request.method == 'POST':
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            customer = form.cleaned_data['customer']
+            movie = form.cleaned_data['movie']
+            rating = form.cleaned_data['rating']
+            rate = Rating(customer=customer, movie=movie, rating=rating)
+            rate.save()
+            return render(request, 'confirmation.html',
+                          context={'descriptive_info': str(rate)})
+    else:
+        form = RatingForm()
+
+    return render(request, 'rate.html', context={'form': form})
