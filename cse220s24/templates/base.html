@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>My Beautiful Site</title>
 
     <style>
         /* Add a black background color to the top navigation */
         .topnav {
-            background-color: darksalmon;
+            background-color: blanchedalmond;
             overflow: hidden;
         }
 
@@ -18,12 +19,12 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            font-size: 47px;
+            font-size: 32px;
         }
 
         /* Change the color of links on hover */
         .topnav a:hover {
-            background-color: blue;
+            background-color: darksalmon;
             color: black;
         }
 
@@ -34,18 +35,75 @@
         }
 
         footer {
-            background-color: cornsilk;
+            background-color: darkgrey;
+        }
+
+        form {
+            display: compact;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 50%;
+            height: auto;
+            padding: 10px;
+            margin: 10px;
+            background-color: lightgrey;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px #888888;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        label {
+            margin-right: 10px;
+
+        }
+
+        input {
+            border-radius: 2px;
+            border: teal;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            font-family: "Arial";
+            font-size: 16px;
+        }
+
+        button {
+            border-radius: 10px;
+            border: 1px solid black;
+            background-color: darkgrey;
+            color: blue;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: goldenrod;
+            color: white;
         }
 
     </style>
 
+    {% block additional_styles %}{% endblock %}
+
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    {% block additional_scripts %}{% endblock %}
 
 </head>
 <body>
 
 <div class="topnav">
     <a class="active" href="/">Home</a>
+    <a href="/pics">Pics</a>
     <a href="/secondapp/create_movie">Movie</a>
     <a href="/secondapp/rate">Rate</a>
 </div>
@@ -53,9 +111,11 @@
 {% block content %}
     <h2>Build software for yourself</h2>
     <p>
-        A great way to build software is to start out by solving your own problems.
-    You’ll be the target audience and you’ll know what’s important and what’s not.
-    That gives you a great head start on delivering a breakout product.
+        A great way to build software is to start out by <br>
+        solving your own problems. You’ll be the target <br>
+        audience and you’ll know what’s important and what’s <br>
+        not. That gives you a great head start on delivering <br>
+        a breakout product.
     </p>
 {% endblock %}
 

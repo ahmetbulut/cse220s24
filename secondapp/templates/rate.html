@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>
     <form method="post" action="rate">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Rate">
+        <button type="submit" name="submit"/>Rate</button>
     </form>
 
 {% endblock %}

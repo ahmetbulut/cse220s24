@@ -1,3 +1,5 @@
 asgiref==3.7.2
+beautifulsoup4==4.12.3
 Django==5.0.2
+soupsieve==2.5
 sqlparse==0.4.4
