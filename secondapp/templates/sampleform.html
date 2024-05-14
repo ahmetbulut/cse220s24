@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    <form method="post" action="dosomething" >
+        {% csrf_token %}
+        <label>
+            What's up, Dude? <input type="name" name="user_data">
+        </label>
+        <button>Register</button>
+    </form>
+{% endblock %}

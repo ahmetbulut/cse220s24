@@ -48,3 +48,9 @@ def rate_view(request):
         form = RatingForm()
 
     return render(request, 'rate.html', context={'form': form})
+
+
+def display_sampleform(request):
+    if request.method == 'POST':
+        return HttpResponse("User typed in %s " % request.POST['user_data'])
+    return render(request, 'sampleform.html')
