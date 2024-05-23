@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <form method="post" action="dosomething" >
+    <h4>I am a template to demonstrate how to work with two buttons!</h4>
+    <form method="post" action="dosomething">
         {% csrf_token %}
-        <label>
-            What's up, Dude? <input type="name" name="user_data">
-        </label>
-        <button>Register</button>
+        {% if error %}
+            {{ error }}
+            <br>
+        {% endif %}
+        <!-- Buttons -->
+        <button type="submit" name="button" value="cancel">Cancel Operation</button>
+        <button type="submit" name="button" value="plotly-demo">Plotly Demo</button>
     </form>
+
 {% endblock %}

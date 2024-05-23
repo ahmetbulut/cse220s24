@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h4>I am a template to demonstrate how to use Plotly for fancy data visualization!</h4>
+    {% autoescape off %}
+        {{ plot_div }}
+    {% endautoescape %}
+{% endblock %}

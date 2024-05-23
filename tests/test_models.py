@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
 
         m = Movie()
         m.name = 'The Movie'
-        m.release_date = '20/9/2024'
+        m.release_date = '2024-05-11'
         m.description = 'This is the movie.'
         m.save()
 
